@@ -1,3 +1,11 @@
-<h1>ようこそ</h1>
-<%= link_to "新規登録", new_user_registration_path %>
-<%= link_to "ログイン", new_user_session_path %>
+<h1>YouMe</h1>
+<% unless user_signed_in? %>
+  <%= link_to "新規登録", new_user_registration_path %>
+  <%= link_to "ログイン", new_user_session_path %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%#= link_to current_user.nickname, "#", class: "user-nickname" %>
+  <%= current_user.nickname %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+<% end %>
