@@ -41,14 +41,14 @@ Things you may want to cover:
 | Column           | Type       | Options           |
 | ---------------- | ---------- | ----------------- |
 | name             | string     | null: false       |
-| easy_history     | text       | null: false       |
-| my_history       | text       | null: false       |
-| my_store         | text       | null: false       |
+| store_name       | string       | null: false       |
+| store_url        | text       | null: false       |
+| text             | text       | null: false       |
 | user_id          | references | foreign_key: true |
 
 ### Association
 
-- belongs_to :user, dependent: :destroy
+- belongs_to :user
 - has_many   :article, dependent: :destroy
 
 
