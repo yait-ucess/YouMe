@@ -1,0 +1,16 @@
+<%= form_with model: @article, local: true do |f| %>
+  <%= link_to "YouMe", root_path, class: "navbar-brand" %>
+  <div class="img-upload">
+    <%= image_tag "camera.png", class: "rounded mx-auto d-block", alt: "camera.png", size: "100x100" %>
+    <%= f.file_field :image, id:"profile-image" %>
+  </div>
+  <div class="form-floating">
+    <textarea class="form-control" placeholder="記事タイトル" id="floatingTextarea"></textarea>
+    <label for="floatingTextarea"></label>
+  </div>
+  <div class="form-floating">
+    <textarea class="form-control" placeholder="ご自由にお書きください。" id="floatingTextarea2" style="height: 600px"></textarea>
+    <label for="floatingTextarea2"></label>
+  </div>
+  <% f.submit "投稿", class: "btn btn-outline-secondary" %>
+<% end %>
