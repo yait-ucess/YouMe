@@ -5,9 +5,11 @@ class Profile < ApplicationRecord
   validates :user_id, uniqueness: true
 
   with_options presence: true do
+    validates :image
     validates :name
     validates :store_name
-    validates :store_url
+    VALID_URL_REGEX = /\A#{URI::regexp(%w(http https))}\z/.freeze
+    validates :store_url, format: { with: VALID_URL_REGEX }
     validates :text
   end
-end
+end 
