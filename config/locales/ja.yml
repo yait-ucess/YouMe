@@ -4,16 +4,24 @@ ja:
 
    attributes:
 
-     profile:
+      profile:
 
-       image: 画像
+        image: 画像
 
-       name: お名前
+        name: お名前
 
-       store_name: お店の名前
+        store_name: お店の名前
 
-       store_url: お店のURL
+        store_url: お店のURL
 
-       text: 自己紹介
+        text: 自己紹介
+
+      article:
+
+        image: 画像
+
+        title: タイトル
+
+        text: 記事
 
        
