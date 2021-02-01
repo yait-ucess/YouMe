@@ -23,6 +23,12 @@
         </li>
         <li class="nav-item">
           <% if user_signed_in? %>
+            <%= link_to "投稿", new_article_path, class: "nav-link" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+        <li class="nav-item">
+          <% if user_signed_in? %>
             <%= link_to "プロフィール", new_profile_path, class: "nav-link" %>
           <% end %>
         </li>
@@ -36,6 +42,3 @@
     </div>
   </div>
 </nav>
-
-
-
