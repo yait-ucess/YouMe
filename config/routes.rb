@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     sessions: 'users/sessions' }
   root to: "articles#index"
   resources :profiles, only: [:new, :create]
-  resources :articles, only: [:new]
+  resources :articles, only: [:new, :create]
 end
