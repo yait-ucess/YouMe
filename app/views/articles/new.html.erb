@@ -1,19 +1,19 @@
-<%= form_with model: @article, url: articles_path, local: true do |f| %>
+<%= form_with model: @article, url: articles_path, local: true do |form| %>
   <%= link_to "YouMe", root_path, class: "navbar-brand" %>
-  <%= render 'shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', model: form.object %>
   <div class="img-upload">
     <%= image_tag "camera.png", class: "rounded mx-auto d-block", alt: "camera.png", size: "100x100" %>
-    <%= f.file_field :image, id:"profile-image" %>
+    <%= form.file_field :image, id:"profile-image" %>
   </div>
   <div class="form-floating">
-    <%= f.text_area :title, class: "form-control", placeholder: "記事タイトル", id: "floatingTextarea" %>
+    <%= form.text_area :title, class: "form-control", placeholder: "記事タイトル", id: "floatingTextarea" %>
     <label for="floatingTextarea"></label>
   </div>
   <div class="form-floating">
-    <%= f.text_area :text, class: "form-control", placeholder: "ご自由にお書きください。", id: "floatingTextarea2", style: "height: 600px"%>
+    <%= form.text_area :text, class: "form-control", placeholder: "ご自由にお書きください。", id: "floatingTextarea2", style: "height: 600px"%>
     <label for="floatingTextarea2"></label>
   </div>
   <div class="button">
-    <%= f.submit "投稿", class: "btn btn-outline-secondary" %>
+    <%= form.submit "投稿", class: "btn btn-outline-secondary" %>
   </div>
 <% end %>
