@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :find_profile, onry: [:create]
 
   def index
+    @articles = Article.includes(:profile).order("created_at DESC")
   end
 
   def new

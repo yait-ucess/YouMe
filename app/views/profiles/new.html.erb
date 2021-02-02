@@ -1,40 +1,39 @@
-<%= form_with model: @profile, url: profiles_path, local: true do |f| %>
+<%= form_with model: @profile, url: profiles_path, local: true do |form| %>
   <%= link_to "YouMe", root_path, class: "navbar-brand" %>
-  <%= render 'shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', model: form.object %>
 
   <h4>あなたを教えてください</h4>
 
-  <%#= f.label %>
   <div class="img-upload">
     <%= image_tag "camera.png", class: "rounded mx-auto d-block", alt: "camera.png", size: "100x100" %>
-    <%= f.file_field :image, id:"profile-image" %>
+    <%= form.file_field :image, id:"profile-image" %>
   </div>
 
   <label for="basic-addon" class="form-label"></label>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">お名前</span>
-    <%= f.text_field :name, class: "form-control", placeholder: "Your name" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Your name" %>
   </div>
 
   <label for="basic-addon" class="form-label"></label>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">お店の名前</span>
-    <%= f.text_field :store_name, class: "form-control", placeholder: "Store name" %>
+    <%= form.text_field :store_name, class: "form-control", placeholder: "Store name" %>
   </div>
 
   <label for="basic-url" class="form-label"></label>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon3">お店のURL</span>
-    <%= f.text_field :store_url, class: "form-control", placeholder: "https://example.com" %>
+    <%= form.text_field :store_url, class: "form-control", placeholder: "https://example.com" %>
   </div>
 
   <div class="form-floating">
     <label for="floatingTextarea2"></label>
-    <%= f.text_area :text, class: "form-control", placeholder: "ご自由にお書きください", id: "floatingTextarea2", style: "height: 400px" %>
+    <%= form.text_area :text, class: "form-control", placeholder: "ご自由にお書きください", id: "floatingTextarea2", style: "height: 400px" %>
   </div>
 
   <div class="button">
-    <%= f.submit "登録する", class: "btn btn-outline-secondary" %>
+    <%= form.submit "登録する", class: "btn btn-outline-secondary" %>
   </div>
 
 <% end %> 
