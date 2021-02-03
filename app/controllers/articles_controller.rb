@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  before_action :find_profile, onry: [:create]
 
   def index
     @articles = Article.includes(:profile).order("created_at DESC")
@@ -10,6 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    @profile = current_user.profile
     @article = Article.new(article_params)
     if @article.save
       redirect_to root_path
@@ -18,12 +18,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   private
   def article_params
     params.require(:article).permit(:image, :title, :text).merge(profile_id: @profile.id)
-  end
-  
-  def find_profile
-    @profile = current_user.profile
   end
 end
