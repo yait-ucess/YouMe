@@ -23,6 +23,9 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    unless @article.profile.user == current_user
+      redirect_to root_path 
+    end
   end
 
   def update
