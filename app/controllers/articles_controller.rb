@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:show, :edit, :update]
+  before_action :find_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.includes(:profile).order("created_at DESC")
@@ -35,6 +35,15 @@ class ArticlesController < ApplicationController
       redirect_to root_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @article.profile.user == current_user
+      @article.destroy
+      redirect_to root_path
+    else
+      render :root_path
     end
   end
 
