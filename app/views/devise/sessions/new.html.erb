@@ -1,6 +1,6 @@
-<h2>ログイン</h2>
-
+<%= render 'articles/header' %>
 <%= form_with model: @user, url: user_session_path do |f| %>
+  <h2>ログイン</h2>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

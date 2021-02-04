@@ -1,5 +1,5 @@
+<%= render 'articles/header' %>
 <%= form_with model: @article, url: articles_path, local: true do |form| %>
-  <%= link_to "YouMe", root_path, class: "navbar-brand" %>
   <%= render 'shared/error_messages', model: form.object %>
   <div class="img-upload">
     <%= image_tag "camera.png", class: "rounded mx-auto d-block", alt: "camera.png", size: "100x100" %>

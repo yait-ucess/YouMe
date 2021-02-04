@@ -1,5 +1,5 @@
+<%= render 'articles/header' %>
 <%= form_with model: @profile, url: profiles_path, local: true do |form| %>
-  <%= link_to "YouMe", root_path, class: "navbar-brand" %>
   <%= render 'shared/error_messages', model: form.object %>
 
   <h4>あなたを教えてください</h4>
