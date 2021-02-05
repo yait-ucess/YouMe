@@ -12,6 +12,9 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
   def profile_params
     params.require(:profile).permit(:image, :name, :store_name, :store_url, :text).merge(user_id: current_user.id)
