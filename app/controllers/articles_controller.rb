@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :edit, :update, :destroy]
 
   def index
+    #@search_articles = Article.includes(:profile).order("created_at DESC")
     @articles = Article.includes(:profile).order("created_at DESC")
   end
 
@@ -48,11 +49,11 @@ class ArticlesController < ApplicationController
   end
 
   private
-  def article_params
-    params.require(:article).permit(:image, :title, :text).merge(profile_id: @profile.id)
-  end
-
   def find_article
     @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:image, :title, :text).merge(profile_id: @profile.id)
   end
 end
