@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @search = Article.ransack(params[:q])
-    @search_articles = @search.result
+    @search_articles = @search.result.includes(:profile).order("created_at DESC")
   end
 end
