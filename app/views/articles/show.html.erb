@@ -2,7 +2,7 @@
 <div class="container">
   <div class="container-fluid img-hidden">
     <%= image_tag @article.profile.image.variant(resize: "200x300"), class: "img-fulied img-thumbnail rounded-circle" %>
-    <p><%= @article.profile.name %></p>
+    <p><%= link_to @article.profile.name, profile_path(@article_profile.id), class: "text-dark" %></p>
   </div>
   <% if user_signed_in? && current_user.id == @article.profile.user_id %>
     <i class="bi bi-pencil">

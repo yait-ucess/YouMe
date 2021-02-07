@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article_profile = @article.profile
   end
 
   def edit
