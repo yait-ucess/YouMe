@@ -1,5 +1,20 @@
-<%= image_tag @profile.image %>
-<%= @profile.name %>
-<%= @profile.store_name %>
-<%= @profile.store_url %>
-<%= @profile.text %>
+<%= render 'articles/header' %>
+<div class="container">
+   
+    <%= image_tag @profile.image, class: "img-fulied img-thumbnail rounded-circle mx-auto d-block", width: "500", height: "200" %>
+    <div class="text-center">
+      <%= @profile.name %>
+    </div>
+    <div class="">
+      <%= @profile.store_name %>
+      <%= @profile.store_url %>
+      <%= @profile.text %>
+    </div>
+    <div class="">
+      <% @profile.articles.order("created_at DESC").each do |articles| %>
+        <%= image_tag articles.image.variant(resize: '300x500'), width: "300", height: "200", class: "img-fluid" %>
+        <%= link_to articles.title, article_path(articles.id), class: "text-dark" %>
+      <% end %>
+    </div>
+  
+</div>
