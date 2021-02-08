@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :find_profile, only: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :find_profile, only: [:show, :edit, :update]
 
   def new
     @profile = Profile.new
@@ -15,6 +16,21 @@ class ProfilesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+    unless @profile.user == current_user
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @profile.update(profile_params)
+    if @profile.save
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
