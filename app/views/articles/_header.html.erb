@@ -17,18 +17,22 @@
           <% end %>     
         </li>
         <li class="nav-item">
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.profile.nil? %>
             <%= link_to current_user.nickname, "#", class: "nav-link" %>
           <% end %>
         </li>
         <li class="nav-item">
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.profile.present? %>
             <%= link_to "投稿", new_article_path, class: "nav-link" %>
           <% end %>
         </li>
         <li class="nav-item">
           <% if user_signed_in? %>
-            <%= link_to "プロフィール", new_profile_path, class: "nav-link" %>
+            <% if current_user.profile.nil? %>
+              <%= link_to "プロフィール", new_profile_path, class: "nav-link" %>
+            <% else %>
+              <%= link_to current_user.profile.name, profile_path(current_user.profile.id), class: "nav-link" %>
+            <% end %>
           <% end %>
         </li>
         <li class="nav-item">
