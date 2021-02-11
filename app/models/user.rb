@@ -13,4 +13,7 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, format: { with: VALID_PASSWORD_REGEX } # パスワード半角英数字
        
+  def already_liked?(profile)
+    self.likes.exists?(profile_id: profile.id)
+  end
 end
