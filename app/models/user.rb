@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :profile, dependent: :destroy
+  has_many :likes, dependent: :destroy
          
   validates :nickname, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
@@ -12,4 +13,7 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, format: { with: VALID_PASSWORD_REGEX } # パスワード半角英数字
        
+  def already_liked?(profile)
+    self.likes.exists?(profile_id: profile.id)
+  end
 end

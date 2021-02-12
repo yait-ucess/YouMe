@@ -12,7 +12,10 @@
 
     <div class="text-center">
       <%= @profile.name %>
-    </div>
+    </div>  
+    <tr id="profile_<%= @profile.id %>">
+      <%= render 'likes/like' %>
+    </tr>
     <div class="">
       <%= @profile.store_name %>
       <%= @profile.store_url %>
