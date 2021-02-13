@@ -1,0 +1,19 @@
+.card-container {
+  max-width: 600px;
+  padding: 40px 40px;
+}
+
+.card-body {
+  /* just in case there no content*/
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 100px;
+}
+
+.card-container {
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-top: 40px;
+}
