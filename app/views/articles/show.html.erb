@@ -17,6 +17,9 @@
       </svg>
     </i><%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "text-dark" %>
   <% end %>
+  <tr id="article_<%= @article.id %>">
+    <%= render 'likes/like' %>
+  </tr>
   <div class="row">
     <div class="article-image">
       <p class="text-center"><%= @article.title %></p>
