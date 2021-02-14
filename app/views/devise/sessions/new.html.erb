@@ -1,12 +1,14 @@
-<%= render 'articles/header' %>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to "YouMe", root_path, class: "navbar-brand" %>
+    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+      <li class="nav-content">
+        <%= link_to "新規登録はこちら", new_user_registration_path, class:  "nav-link" %>      
+      </li>
+    </ul>
+  </div>
+</nav>
 <%= form_with model: @user, url: user_session_path do |f| %>
-  <title>ログイン</title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-  <body>
-
   <div class="container">
     <div class="card-container">
       <div class="card-body">
