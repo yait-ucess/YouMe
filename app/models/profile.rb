@@ -2,6 +2,7 @@ class Profile < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :articles, dependent: :destroy
+  has_many :gifts
 
   validates :user_id, uniqueness: true
 

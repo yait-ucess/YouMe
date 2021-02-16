@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :gifts
          
   validates :nickname, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
