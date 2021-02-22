@@ -6,8 +6,9 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :gifts
-         
+  has_many :gifts, foreign_key: 'giver_id'
+  has_many :receivers, through: :gifts, source: :giver
+
   validates :nickname, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   validates :email, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false } #Email大・小文字の区別なし、一意性

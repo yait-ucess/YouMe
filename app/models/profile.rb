@@ -2,7 +2,8 @@ class Profile < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :articles, dependent: :destroy
-  has_many :gifts
+  has_many :gifts, foreign_key: 'receiver_id'
+  has_many :givers, through: :gifts, source: :receiver
 
   validates :user_id, uniqueness: true
 
