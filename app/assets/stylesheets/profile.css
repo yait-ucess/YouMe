@@ -1,7 +1,9 @@
-.like {
-  color: #808080; 
+.profile {
+  display: flex;
+  flex-direction: column;
 }
 
-.unlike {
-  color: #e54747;
+.article-profile {
+  display: flex;
+  flex-direction: column;
 }
