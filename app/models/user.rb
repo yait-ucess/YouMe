@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :gifts, foreign_key: 'giver_id'
-  has_many :receivers, through: :gifts, source: :giver
+  has_many :gifts, class_name: 'Gift', foreign_key: 'giver_id'
+  has_many :receivers, through: :gifts, source: :receiver
 
   validates :nickname, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
