@@ -24,4 +24,7 @@ ja:
 
         text: 記事
 
-       
+ja:
+  time:
+    formats:
+      default: "%Y年 %m月 %d日"
