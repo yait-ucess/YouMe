@@ -1,0 +1,23 @@
+<%= form_with model: @gift, url: profile_gifts_path(@profile) do |f| %>
+  <div class="container">
+    <div class="card-container">
+      <%= link_to "キャンセル", profile_path(@profile), class: "btn btn-light" %>
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4 mt-1"><%= simple_format("#{@profile.name}さん<br>に100円分のギフトを贈ります") %></h3>
+          <form>
+            <div class="form-group">
+              <div class="hand-heart text-center mb-4 mt-1">
+                <i class="fas fa-hand-holding-heart"></i>
+              </div>
+              <div class="input-group mb-4 mt-1">
+                <%= f.select :price, "100": 100%>
+              </div> <!-- input-group.// -->
+            </div> <!-- form-group// -->
+            <div class="form-group">
+              <%= f.submit "ギフトを贈る", class: "btn btn-outline-success btn-block" %>
+            </div> <!-- form-group// -->
+          </form>
+      </div>
+    </div>
+  </div>
+<% end %>
