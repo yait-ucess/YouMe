@@ -1,5 +1,5 @@
 class GiftsController < ApplicationController
-  before_action :find_profile, only: [:gift_params, :new, :create, :show]
+  before_action :find_profile, only: [:gift_params, :new, :create]
   before_action :limit_gift, only: [:new, :create]
 
   def new
@@ -16,8 +16,12 @@ class GiftsController < ApplicationController
   end
 
   def show
-    @gift = current_user.profile.gifts
-    @gift_price = @gift.map { |h| h[:price] }
+    if current_user.profile.present?
+      @profile = current_user.profile
+      @gift_receive = current_user.profile.gifts
+      @gift_price = @gift_receive.map { |h| h[:price] }
+      #binding.pry
+    end
   end
 
   private
@@ -26,6 +30,7 @@ class GiftsController < ApplicationController
   end
 
   def find_profile
+    #@profile = current_user.profile
     @profile = Profile.find(params[:profile_id])
   end
 
