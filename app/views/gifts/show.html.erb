@@ -1,27 +1,38 @@
 <%= render 'articles/header' %>
 <div class="container">
-  <div class="table-responsive">
-    <table class="table">
-      <% @amount = 0 %>
-      <% @gift_price.each do |num| %>
-        <% @amount = (@amount += num) %>
-      <% end %>
-      <div class="total-amount">
-        総額<p class="font-weight-bold">￥<%= @amount %></p>
-      </div>
-      <div class="table-light">
-        <tr><th>日付</th><th>金額</th><th>ユーザー</th></tr>
-      </div>
-      <% @gift.each do |gift| %>
-        <div class="receive">
-          <tr class="receive-history">
-            <td><%= l gift.created_at %></td>
-            <td>￥<%= gift.price %></td>
-            <td><%= gift.giver.nickname %>さん</td>
-          </tr>
+  <% if current_user.profile.present? && current_page?(profile_gifts_path(current_user.profile)) %>
+    <div class="table-responsive">
+      <table class="table">
+        <% @amount = 0 %>
+        <% @gift_price.each do |num| %>
+          <% @amount = (@amount += num) %>
+        <% end %>
+        <div class="total-amount">
+          総額<p class="font-weight-bold">￥<%= @amount %></p>
         </div>
-      <% end %>
-    </table>
-  </div>
+        <div class="table-light">
+          <tr><th>日付</th><th>金額</th><th>ユーザー</th></tr>
+        </div>
+        <% @gift_receive.each do |gift| %>
+          <div class="receive">
+            <tr class="receive-history">
+              <td><%= l gift.created_at %></td>
+              <td>￥<%= gift.price %></td>
+              <td><%= gift.giver.nickname %>さん</td>
+            </tr>
+          </div>
+        <% end %>
+      </table>
+    </div>
+  <% else %>
+    <div class="table-responsive">
+      <table class="table">
+        <div class="table-light">
+          <tr><th>日付</th><th>ユーザー</th><th>クーポン</th></tr>
+        </div>
+        YouMe
+      </table>
+    </div>   
+  <% end %>
 </div>
 
