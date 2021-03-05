@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {   registrations: 'users/registrations',
-    sessions: 'users/sessions' }
   root to: "articles#index"
-  resources :profiles, only: [:new, :create, :show, :edit, :update]
+  devise_for :users
+  resources :profiles, only: [:new, :create, :show, :edit, :update] do
+    resource :gifts, only: [:new, :create, :show]
+  end
   resources :articles do
     get :search, on: :collection
     resource :likes, only: [:create, :destroy]

@@ -1,0 +1,19 @@
+.navbar {
+  margin-bottom: 35px;
+}
+
+.article img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.like {
+  color: #808080;
+}
+
+.unlike {
+  color: #e54747;
+}
+/*# sourceMappingURL=articles.css.map */
