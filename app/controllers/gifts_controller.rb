@@ -22,6 +22,7 @@ class GiftsController < ApplicationController
       @gift_price = @gift_receive.map { |h| h[:price] }
       #binding.pry
     end
+      @gift_give = current_user.gifts
   end
 
   private
