@@ -13,12 +13,18 @@
         <div class="table-light">
           <tr><th>日付</th><th>金額</th><th>ユーザー</th></tr>
         </div>
-        <% @gift_receive.each do |gift| %>
+        <% @gift_receive.each do |receive| %>
           <div class="receive">
             <tr class="receive-history">
-              <td><%= l gift.created_at %></td>
-              <td>￥<%= gift.price %></td>
-              <td><%= gift.giver.nickname %>さん</td>
+              <td><%= l receive.created_at %></td>
+              <td>￥<%= receive.price %></td>
+              <td>
+                <% if receive.giver.profile.present? %>
+                  <%= receive.giver.profile.name %>さん
+                <% else %>
+                  <%= receive.giver.nickname %>さん
+                <% end %>
+              </td>
             </tr>
           </div>
         <% end %>
@@ -30,7 +36,20 @@
         <div class="table-light">
           <tr><th>日付</th><th>ユーザー</th><th>クーポン</th></tr>
         </div>
-        YouMe
+        <% @gift_give.each do |give| %>
+          <div class="give">
+            <tr class="give-history">
+              <td><%= l give.created_at %></td>
+              <td><%= give.receiver.name%>さん</td>
+              <td>
+                <%= link_to root_path do %>
+                  <i class="fas fa-gift"></i><i class="fas fa-gifts"></i><i class="far fa-address-card"></i>
+                <% end %>
+                ￥300
+              </td>
+            </tr>
+          </div>
+        <% end %>
       </table>
     </div>   
   <% end %>
