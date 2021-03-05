@@ -8,21 +8,32 @@
     </i>
     <%= link_to "編集", edit_profile_path(@profile.id), class: "text-dark" %>
   <% end %>
-    <%= image_tag @profile.image, class: "img-fulied img-thumbnail rounded-circle mx-auto d-block", width: "500", height: "200" %>
-
-    <div class="text-center">
-      <%= @profile.name %>
-    </div>  
-    <div class="">
-      <%= @profile.store_name %>
-      <%= @profile.store_url %>
-      <%= @profile.text %>
+  <div class="profile-img">
+    <%= image_tag @profile.image, class: "img-fluid" %>
+  </div>
+  <div class="text-center">
+    <strong><%= @profile.name %></strong>
+  </div>
+  <% if user_signed_in? && current_user != @profile.user%>  
+    <%= link_to new_profile_gifts_path(@profile) do %>
+      <div class="btn btn-outline-success">
+        <i class="fas fa-gift"></i>
+        ギフトを贈る
+      </div>
+    <% end %>
+  <% end %>
+    <div class="profile">
+      <div class="">
+        <%= @profile.store_name %>
+        <%= @profile.store_url %>
+        <%= @profile.text %>
+      </div>
+      
+      <div class="article-profile">
+        <% @profile.articles.order("created_at DESC").each do |articles| %>
+          <%= image_tag articles.image.variant(resize: '300x500'), width: "300", height: "200", class: "img-fluid" %>
+          <%= link_to articles.title, article_path(articles.id), class: "text-dark" %>
+        <% end %>
+      </div>
     </div>
-    <div class="">
-      <% @profile.articles.order("created_at DESC").each do |articles| %>
-        <%= image_tag articles.image.variant(resize: '300x500'), width: "300", height: "200", class: "img-fluid" %>
-        <%= link_to articles.title, article_path(articles.id), class: "text-dark" %>
-      <% end %>
-    </div>
-  
 </div>

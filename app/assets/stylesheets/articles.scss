@@ -1,3 +1,35 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar {
+  margin-bottom: 35px;
+}
+
+.menu {
+  //height: 500px;
+}
+
+.article {
+
+  & img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.article-index {
+  //display: flex;
+  //align-items: flex-end;
+  //flex-wrap: wrap;
+  //flex-direction: row-reverse;
+}
+
+.like {
+  color: #808080; 
+}
+
+.unlike {
+  color: #e54747;
+}
