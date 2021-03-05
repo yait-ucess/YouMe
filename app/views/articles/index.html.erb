@@ -1,12 +1,66 @@
 <%= render 'articles/header' %>
 
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="article-index row">
+    <div class="menu col-md-2">
+      <table class="table table-borderless">
+        <% unless user_signed_in? %>
+          <tr><td>
+            <%= link_to "新規登録", new_user_registration_path, class:  "text-secondary" %>
+          </td></tr>
+        <% end %>
+        <% unless user_signed_in? %>
+          <tr><td>
+            <%= link_to "ログイン", new_user_session_path, class: "text-secondary" %>
+          </td></tr>
+        <% end %>     
+        <% if user_signed_in? && current_user.profile.nil? %>
+          <tr><td>
+            <%= link_to current_user.nickname, edit_user_registration_path, class: "text-secondary" %>
+          </td></tr>
+        <% end %>
+        <% if user_signed_in? %>
+          <% if current_user.profile.nil? %>
+            <tr><td>
+              <%= link_to "プロフィール登録", new_profile_path, class: "text-secondary" %>
+            </td></tr>
+          <% else %>
+            <tr><td>
+              <%= link_to current_user.profile.name, profile_path(current_user.profile.id), class: "text-secondary" %>
+            </td></tr>
+          <% end %>
+        <% end %>
+        <% if user_signed_in? && current_user.profile.present? %>
+          <tr><td>
+            <%= link_to "投稿", new_article_path, class: "text-secondary" %>
+          </td></tr>
+        <% end %>
+        <% if user_signed_in?%>
+          <tr><td>
+            <%= link_to "贈ったギフト", profile_gifts_path(current_user), class: "text-secondary" %>
+          </td></tr>
+        <% end %>
+        <% if user_signed_in? && current_user.profile.present? %>
+          <tr><td>
+            <%= link_to "貰ったギフト", profile_gifts_path(current_user.profile), class: "text-secondary" %>
+          </td></tr>
+        <% end %>
+        <tr><td>
+          <%= link_to "YouMeの使い方", "#", class: "text-secondary" %>
+        </td></tr>
+        <tr><td>
+          <%= link_to "YouMeの想い", "#", class: "text-secondary" %>
+        </td></tr>
+        <% if user_signed_in? %>
+          <tr><td>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "text-secondary" %>
+          </td></tr>
+        <% end %>
+      </table>
+    </div>
     <% @search_articles.each do |article| %>
-      <div class="col-md-5">
-        <div class="article-image">
-          <%= image_tag article.image, class: "img-fluid" %>
-        </div>
+      <div class="article col-md-4">
+        <%= image_tag article.image, class: "img-fluid rounded" %>
         <p><%= link_to article.title, article_path(article.id), class: "text-dark" %></p>
         <p><%= link_to article.profile.name, profile_path(article.profile_id), class: "text-dark" %></p>
       </div>

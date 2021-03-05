@@ -1,0 +1,38 @@
+.hand-heart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.fa-heart {
+  font-size: 30px;
+  color: #e54747;
+}
+
+.fa-hand-holding {
+  font-size: 80px;
+  margin-top: -7%;
+  color: #FEDCBD;
+}
+
+.total-amount {
+  margin-left: 10px;
+  margin-bottom: 50px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.total-amount p {
+  margin-left: 30%;
+}
+
+.table {
+  table-layout: fixed;
+}
+/*# sourceMappingURL=gifts.css.map */

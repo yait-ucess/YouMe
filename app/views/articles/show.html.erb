@@ -1,9 +1,5 @@
 <%= render 'articles/header' %>
 <div class="container">
-  <div class="container-fluid img-hidden">
-    <%= image_tag @article.profile.image.variant(resize: "200x300"), class: "img-fulied img-thumbnail rounded-circle" %>
-    <p><%= link_to @article.profile.name, profile_path(@article_profile.id), class: "text-dark" %></p>
-  </div>
   <% if user_signed_in? && current_user.id == @article.profile.user_id %>
     <i class="bi bi-pencil">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -23,6 +19,10 @@
   <div class="row">
     <div class="article-image">
       <p class="text-center"><%= @article.title %></p>
+      <div class="container-fluid img-hidden">
+        <%= image_tag @article.profile.image.variant(resize: "200x300"), class: "img-fulied img-thumbnail rounded-circle" %>
+        <p><%= link_to @article.profile.name, profile_path(@article_profile.id), class: "text-dark" %></p>
+      </div>
       <%= image_tag @article.image, class: "img-fluid" %>
       <p class="text-center"><%= @article.text %></p>
     </div>
