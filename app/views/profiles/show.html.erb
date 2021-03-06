@@ -14,6 +14,7 @@
   <div class="text-center">
     <strong><%= @profile.name %></strong>
   </div>
+  <%= render 'relationships/relationship' %>
   <% if user_signed_in? && current_user != @profile.user%>  
     <%= link_to new_profile_gifts_path(@profile) do %>
       <div class="btn btn-outline-success">
