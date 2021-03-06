@@ -4,6 +4,8 @@ class Profile < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :gifts, class_name: 'Gift', foreign_key: 'receiver_id'
   has_many :givers, through: :gifts, source: :giver
+  has_many :relationships, class_name: 'Relationship', foreign_key: 'followed_id'
+  has_many :followers, through: :relationships, source: :follower
 
   validates :user_id, uniqueness: true
 
