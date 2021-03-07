@@ -20,4 +20,8 @@ class User < ApplicationRecord
   def already_liked?(article)
     self.likes.exists?(article_id: article.id)
   end
+
+  def already_follow?(profile)
+    self.relationships.exists?(followed_id: profile.id)
+  end
 end
