@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   #resource :users, only: [:show]
   resources :profiles, only: [:new, :create, :show, :edit, :update] do
     resource :gifts, only: [:new, :create, :show]
-    resource :relationships, only: [:create, :destroy]
+    resource :relationships, only: [:create, :destroy, :show]
   end
 
   resources :articles do
