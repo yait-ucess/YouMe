@@ -1,0 +1,7 @@
+<% @my_follow.each do |follow| %>
+  <%= follow.followed.name %>
+<% end %>
+
+<% @follower.each do |follower| %>
+  <%= follower.follower.nickname %>
+<% end %>
