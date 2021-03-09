@@ -14,6 +14,9 @@
   <div class="text-center">
     <strong><%= @profile.name %></strong>
   </div>
+  <%= link_to "フォロー", followed_profile_path, class: "text-secondary" %>
+  <%= link_to "フォロワー", follower_profile_path, class: "text-secondary" %>
+  <%= render 'relationships/relationship' %>
   <% if user_signed_in? && current_user != @profile.user%>  
     <%= link_to new_profile_gifts_path(@profile) do %>
       <div class="btn btn-outline-success">

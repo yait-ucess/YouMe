@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user != @article.profile.user %>
+<% if user_signed_in? && (current_user != @article.profile.user) %>
   <% if current_user.already_liked?(@article) %>
     <%= link_to article_likes_path(@article), method: :delete, remote: true do %>
       <svg xmlns="http://www.w3.org/2000/svg"class="unlike" width="25" height="25" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">

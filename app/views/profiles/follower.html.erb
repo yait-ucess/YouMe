@@ -1,0 +1,13 @@
+<%= render 'articles/header' %>
+<div class="container">
+  フォロワー
+  <div class="table-responsive">
+    <table class="table table-borderless">
+      <% @follower.each do |follower| %>
+        <tr class="follower-list">
+          <td><%= follower.follower.nickname %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

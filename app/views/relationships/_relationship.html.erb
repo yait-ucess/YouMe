@@ -1,0 +1,15 @@
+<% if user_signed_in? && current_user != @profile.user %>
+  <% if Relationship.exists?(follower_id: current_user.id, followed_id: @profile.id) %>
+    <div class="unfollow">
+      <%= link_to profile_relationships_path(@profile), method: :delete, remote: true, class: "unfollow-btn" do %>
+        <i class="far fa-user"></i> フォロー中
+      <% end %>
+    </div>
+  <% else %>
+    <div class="follow">
+      <%= link_to profile_relationships_path(@profile), method: :post, remote: true, class: "btn btn-outline-info" do %>
+        <i class="fas fa-user"></i> フォロー
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
