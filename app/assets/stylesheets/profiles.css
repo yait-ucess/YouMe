@@ -31,4 +31,12 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+.follow-list {
+  text-align: center;
+}
+
+.follower-list {
+  text-align: center;
+}
 /*# sourceMappingURL=profiles.css.map */
