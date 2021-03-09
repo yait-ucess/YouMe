@@ -1,0 +1,13 @@
+<%= render 'articles/header' %>
+<div class="container">
+  フォロー
+  <div class="table-responsive">
+    <table class="table table-borderless">
+      <% @my_follow.each do |follow| %>
+        <tr class="follow-list">
+          <td><%= follow.followed.name %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
