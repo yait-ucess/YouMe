@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_profile, only: [:show, :edit, :update]
+  before_action :authenticate_user!, except: [:index, :show, :followed, :follower]
+  before_action :find_profile, only: [:show, :edit, :update, :followed, :follower]
 
   def new
     @profile = Profile.new
@@ -16,6 +16,14 @@ class ProfilesController < ApplicationController
   end
 
   def show
+  end
+
+  def followed
+    @my_follow = @profile.user.relationships
+  end
+
+  def follower
+    @follower  = @profile.relationships
   end
 
   def edit
