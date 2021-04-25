@@ -1,0 +1,51 @@
+<div class="menu">
+    <ul class="menu__main">
+        <li class="menu__item">
+          <% unless user_signed_in? %>
+              <%= link_to "新規登録", new_user_registration_path, class: "menu__link" %>
+          <% end %>
+        </li>
+        <li class="menu__item">
+          <% unless user_signed_in? %>
+              <%= link_to "ログイン", new_user_session_path, class: "menu__link" %>
+          <% end %> 
+        </li>
+        <li class="menu__item">
+          <% if user_signed_in? && current_user.profile.nil? %>
+              <%= link_to current_user.nickname, edit_user_registration_path, class: "menu__link" %>
+          <% end %>
+        </li>
+        <li class="menu__item">
+          <% if user_signed_in? %>
+            <% if current_user.profile.nil? %>
+                <%= link_to "プロフィール登録", new_profile_path, class: "menu__link" %>
+            <% else %>
+                <%= link_to current_user.profile.name, profile_path(current_user.profile.id), class: "menu__link" %>
+            <% end %>
+          <% end %>
+        </li>
+        <li class="menu__item">
+          <% if user_signed_in? && current_user.profile.present? %>
+              <%= link_to "投稿", new_article_path, class: "menu__link" %>
+          <% end %>
+        </li>
+        <li class="menu__item">
+          <% if user_signed_in?%>
+              <%= link_to "贈ったギフト", profile_gifts_path(current_user), class: "menu__link" %>
+          <% end %>
+        </li>
+        <li class="menu__item">
+          <% if user_signed_in? && current_user.profile.present? %>
+            <%= link_to "貰ったギフト", profile_gifts_path(current_user.profile), class: "menu__link" %>
+          <% end %>
+        </li>
+        <li class="menu__item">
+          <%= link_to "YouMeの想い", "https://sharp-visvesvaraya-5c5708.netlify.app", class: "menu__link" %>
+        </li>
+        <li class="menu__item">
+          <% if user_signed_in? %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "menu__link" %>
+          <% end %>
+        </li>
+    </ul>
+</div>
