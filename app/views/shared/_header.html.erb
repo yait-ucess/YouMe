@@ -1,0 +1,21 @@
+<div class="nav-trigger">
+</div>
+<header class="header">
+  <div class="header__inner">
+    <a class="header__title" href="#">
+      <i class="fas fa-cookie"></i>
+      <%= link_to "YouMe", root_path, class: "header__youme" %>
+    </a>
+    <%= search_form_for @search, url: articles_path do |f| %>
+      <%= f.search_field :text_cont, class: "form-control", type: "search", placeholder: "キーワードを入力" %>
+      <%= button_tag type: 'submit', class: "btn btn-outline-secondary" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+    <button class="hamburger" onclick="document.querySelector('body').classList.toggle('menu-open');">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

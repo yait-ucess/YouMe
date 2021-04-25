@@ -1,8 +1,8 @@
-<%= render 'articles/header' %>
-
+<%= render 'shared/header' %>
+<%= render 'shared/menu' %>
 <div class="container-fluid">
-  <div class="article-index row">
-    <%= render 'articles/menu' %>
+  <div class="menu__cover"></div> 
+    <div class="article-index row">
     <% @search_articles.each do |article| %>
       <div class="article col-md-4">
         <%= image_tag article.image, class: "img-fluid rounded" %>
@@ -11,4 +11,32 @@
       </div>
     <% end %>
   </div>
+  <%# <nav class="menu">
+      <ul class="menu__main">
+          <li class="menu__item">
+              <a class="menu__link" href="#">
+                  <span class="main-title">Service</span>
+                  <span class="sub-title">サービスについて</span>
+              </a>
+          </li>
+          <li class="menu__item">
+              <a class="menu__link" href="#">
+                  <span class="main-title">Company</span>
+                  <span class="sub-title">企業情報</span>
+              </a>
+          </li>
+          <li class="menu__item">
+              <a class="menu__link" href="#">
+                  <span class="main-title">Recruit</span>
+                  <span class="sub-title">採用情報</span>
+              </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">
+                <span class="main-title">Contact</span>
+                <span class="sub-title">お問い合わせ</span>
+            </a>
+        </li>
+      </ul>
+  </nav> %>
 </div>

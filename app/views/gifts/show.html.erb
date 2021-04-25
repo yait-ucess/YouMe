@@ -1,4 +1,5 @@
-<%= render 'articles/header' %>
+<%= render 'shared/header' %>
+<%= render 'shared/menu' %>
 <div class="container">
   <% if current_user.profile.present? && current_page?(profile_gifts_path(current_user.profile)) %>
     <div class="table-responsive">

@@ -1,4 +1,4 @@
-<%= render 'articles/header' %>
+<%= render 'shared/header' %>
 <div class="container">
   <% if user_signed_in? && current_user.id == @article.profile.user_id %>
     <i class="bi bi-pencil">
