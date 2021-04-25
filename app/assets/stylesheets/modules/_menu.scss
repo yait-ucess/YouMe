@@ -116,14 +116,14 @@ $cGainsboro: gainsboro;
 
       & > a {
           &:hover {
-              color: gainsboro !important;
+              color: $cGainsboro;
           }
       }
   }
   &__link {
       display: block;
       margin-top: 30px;
-      color: $cGainsboro;
+      color: darkgray;
       text-decoration: none !important;
       text-align: center;
   }
