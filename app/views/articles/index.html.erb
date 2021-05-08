@@ -2,9 +2,9 @@
 <%= render 'shared/menu' %>
 <div class="container-fluid">
   <div class="menu__cover"></div> 
-    <div class="article-index row">
+    <div class="article-index">
     <% @search_articles.each do |article| %>
-      <div class="article col-md-4">
+      <div class="article">
         <%= image_tag article.image, class: "img-fluid rounded" %>
         <p><%= link_to article.title, article_path(article.id), class: "text-dark" %></p>
         <p><%= link_to article.profile.name, profile_path(article.profile_id), class: "text-dark" %></p>

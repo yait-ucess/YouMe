@@ -9,7 +9,7 @@
     <%= link_to "編集", edit_profile_path(@profile.id), class: "text-dark" %>
   <% end %>
   <div class="profile-img">
-    <%= image_tag @profile.image, class: "img-fluid" %>
+    <%= image_tag @profile.image, class: "" %>
   </div>
   <div class="text-center">
     <strong><%= @profile.name %></strong>
@@ -34,7 +34,7 @@
       
       <div class="article-profile">
         <% @profile.articles.order("created_at DESC").each do |articles| %>
-          <%= image_tag articles.image.variant(resize: '300x500'), width: "300", height: "200", class: "img-fluid" %>
+          <%= image_tag articles.image.variant(resize: '300x500'), width: "300", height: "200", class: "" %>
           <%= link_to articles.title, article_path(articles.id), class: "text-dark" %>
         <% end %>
       </div>

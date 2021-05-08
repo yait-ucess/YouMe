@@ -1,0 +1,22 @@
+/******************************************************************
+
+Stylesheet: 410px以上(スマホの縦向き)のモニタで適用
+
+******************************************************************/
+@media (min-width: 410px) {
+
+  .navbar {
+    margin-bottom: 35px;
+  }
+
+  .article {
+    max-width: 100%;
+    flex-direction: column;
+
+    & img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
