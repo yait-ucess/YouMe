@@ -1,16 +1,23 @@
 <%= render 'shared/header' %>
 <%= render 'shared/menu' %>
 <div class="container-fluid">
-  <div class="menu__cover"></div> 
-    <div class="article-index">
+  <div class="article row">
+    <div class="menu__cover"></div> 
     <% @search_articles.each do |article| %>
-      <div class="article">
-        <%= image_tag article.image, class: "img-fluid rounded" %>
-        <p><%= link_to article.title, article_path(article.id), class: "text-dark" %></p>
-        <p><%= link_to article.profile.name, profile_path(article.profile_id), class: "text-dark" %></p>
+      <div class="article__inner col-md-6 col-lg-4 ">
+        <div class="article__img">
+          <%= image_tag article.image, class: "rounded" %>
+        </div>
+        <div class="article__title">
+          <p><%= link_to article.title, article_path(article.id), class: "text-dark" %></p>
+        </div>
+        <div class="article__writer">
+          <p><%= link_to article.profile.name, profile_path(article.profile_id), class: "text-dark" %></p>
+        </div>
       </div>
     <% end %>
   </div>
+</div>
   <%# <nav class="menu">
       <ul class="menu__main">
           <li class="menu__item">

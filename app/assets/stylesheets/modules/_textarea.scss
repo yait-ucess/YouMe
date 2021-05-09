@@ -1,0 +1,13 @@
+textarea {
+  /* inputの枠線を消す */
+  border: 1px solid transparent;
+  transition: border 0.2s ease-out;
+
+  /* 任意の高さ */
+  height: 100px;
+
+  /*inputのフォーカス時の枠線を消す*/
+  outline: 0;
+
+  width: 100%;
+}

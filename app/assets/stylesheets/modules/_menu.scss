@@ -2,16 +2,16 @@ $cBlack: black;
 $cWhite: white;
 $cGainsboro: gainsboro;
 
-// .menu {
+.menu {
 //   position: fixed;
 //   right: 0;
 //   top: 150px;
 //   width: 300px;
 
-//   &__main {
-//     list-style: none;
-//   }
-// }
+  &__main {
+    list-style: none;
+  }
+}
 
 // .menu-open {
 //   & .container,

@@ -11,19 +11,16 @@
 }
 
 .article {
-
-  & img {
-    max-width: 100%;
-    height: auto;
+  &__img  {
+    height: 220px;
+    overflow: hidden;
+    margin-bottom: 5px;
     object-fit: cover;
   }
-}
 
-.article-index {
-  //display: flex;
-  //align-items: flex-end;
-  //flex-wrap: wrap;
-  //flex-direction: row-reverse;
+  &__form__title {
+    padding-bottom: 100px;
+  }
 }
 
 .like {

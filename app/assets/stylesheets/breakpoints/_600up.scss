@@ -6,7 +6,21 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 @media (min-width: 600px) {
 
   .article {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    //flex-direction: row;
+    //justify-content: space-between;
+    //flex-wrap: wrap;
+    // flex: 0 0 33.33333%;
+
+    &__inner {
+      //display: flex;
+      //flex-direction: row;
+      //justify-content: space-between;
+    }
+
+    &__index {
+      //flex-wrap: wrap;
+      //flex-basis: 46%;
+      padding-bottom: 30px;
+    }
   }
 }
