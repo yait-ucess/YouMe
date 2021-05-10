@@ -1,6 +1,7 @@
 <%= render 'shared/header' %>
 <%= render 'shared/menu' %>
-<div class="container">
+<div class="container"> 
+  <div class="menu__cover"></div>
   <%= form_with model: @article, url: articles_path, local: true do |form| %>
     <%= render 'shared/error_messages', model: form.object %>
     <div class="img-upload">

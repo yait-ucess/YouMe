@@ -6,7 +6,7 @@
     <% @search_articles.each do |article| %>
       <div class="article__inner col-md-6 col-lg-4 ">
         <div class="article__img">
-          <%= image_tag article.image, class: "rounded" %>
+          <%= image_tag article.image, class: "article-index-img rounded" %>
         </div>
         <div class="article__title">
           <p><%= link_to article.title, article_path(article.id), class: "text-dark" %></p>

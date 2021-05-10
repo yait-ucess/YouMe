@@ -14,13 +14,18 @@
   &__img  {
     height: 220px;
     overflow: hidden;
-    margin-bottom: 5px;
-    object-fit: cover;
+    //object-fit: cover;
   }
 
   &__form__title {
     padding-bottom: 100px;
   }
+}
+
+.article-index-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .like {

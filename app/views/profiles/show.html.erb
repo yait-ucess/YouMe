@@ -1,4 +1,5 @@
 <%= render 'shared/header' %>
+<%= render 'shared/menu' %>
 <div class="container">
   <% if @profile.user == current_user %>
     <i class="bi bi-pencil">
@@ -8,14 +9,16 @@
     </i>
     <%= link_to "編集", edit_profile_path(@profile.id), class: "text-dark" %>
   <% end %>
-  <div class="profile-img">
-    <%= image_tag @profile.image, class: "" %>
+  <div class="profile-show-img">
+    <%= image_tag @profile.image, class: "profile-img"%>
   </div>
   <div class="text-center">
     <strong><%= @profile.name %></strong>
   </div>
-  <%= link_to "フォロー", followed_profile_path, class: "text-secondary" %>
-  <%= link_to "フォロワー", follower_profile_path, class: "text-secondary" %>
+  <div class="profile-follow-list">
+    <%= link_to "フォロー", followed_profile_path, class: "text-secondary" %>
+    <%= link_to "フォロワー", follower_profile_path, class: "text-secondary" %>
+  </div>
   <%= render 'relationships/relationship' %>
   <% if user_signed_in? && current_user != @profile.user%>  
     <%= link_to new_profile_gifts_path(@profile) do %>
@@ -25,18 +28,17 @@
       </div>
     <% end %>
   <% end %>
-    <div class="profile">
-      <div class="">
-        <%= @profile.store_name %>
-        <%= @profile.store_url %>
-        <%= @profile.text %>
+  <div class="profile">
+    <%= @profile.store_name %>
+    <%= @profile.store_url %>
+    <%= @profile.text %>
+  </div>
+  <div class="row">
+    <% @profile.articles.order("created_at DESC").each do |articles| %>
+      <div class="article-profile col-sm-6">
+        <%= image_tag articles.image, class: "profile-article-img rounded" %>
+        <%= link_to articles.title, article_path(articles.id), class: "text-dark" %>
       </div>
-      
-      <div class="article-profile">
-        <% @profile.articles.order("created_at DESC").each do |articles| %>
-          <%= image_tag articles.image.variant(resize: '300x500'), width: "300", height: "200", class: "" %>
-          <%= link_to articles.title, article_path(articles.id), class: "text-dark" %>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
+  </div>
 </div>
