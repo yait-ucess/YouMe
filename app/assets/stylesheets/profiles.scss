@@ -49,3 +49,10 @@
   height: 280px;
   object-fit: cover;
 }
+
+//edit
+.profile-edit {
+  &__image {
+    margin-bottom: 20px;
+  }
+}

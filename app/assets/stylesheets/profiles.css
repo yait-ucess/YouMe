@@ -38,4 +38,8 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.profile-edit__image {
+  margin-bottom: 20px;
+}
 /*# sourceMappingURL=profiles.css.map */
