@@ -10,10 +10,10 @@
         <%= form.file_field :image %>
       </div>
       <div class="article-edit__title">
-        <%= form.text_area :title, class: "form-control", placeholder: "記事タイトル" %>
+        <%= form.text_area :title, class: "article-edit__form", placeholder: "記事タイトル" %>
       </div>
       <div class="article-edit__text">
-        <%= form.text_area :text, class: "form-control", placeholder: "ご自由にお書きください。", style: "height: 600px"%>
+        <%= form.text_area :text, class: "article-edit__form", placeholder: "ご自由にお書きください。"%>
       </div>
       <div class="button">
         <%= form.submit "完了", class: "btn btn-outline-secondary" %>
