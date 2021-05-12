@@ -1,18 +1,10 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to "YouMe", root_path, class: "navbar-brand" %>
-    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-      <li class="nav-content">
-        <%= link_to "ログインはこちら", new_user_session_path, class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/header' %>
+<%= render 'shared/menu' %>
 <%= form_with model: @user, url: user_registration_path do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="container">
     <div class="card-container">
-      <div class="card-body">
+      <!--div class="card-body"> -->
           <h3 class="card-title text-center mb-4 mt-1">新規登録</h3>
           <hr>
           <form>
@@ -56,7 +48,7 @@
               <%= f.submit "登録する", class: "btn btn-outline-secondary btn-block" %>
             </div> <!-- form-group// -->
           </form>
-      </div>
+      <!--/div> -->
     </div>
   </div>
 <% end %>

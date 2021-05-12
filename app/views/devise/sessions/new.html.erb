@@ -1,17 +1,9 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to "YouMe", root_path, class: "navbar-brand" %>
-    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-      <li class="nav-content">
-        <%= link_to "新規登録はこちら", new_user_registration_path, class:  "nav-link" %>      
-      </li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/header' %>
+<%= render 'shared/menu' %>
 <%= form_with model: @user, url: user_session_path do |f| %>
   <div class="container">
     <div class="card-container">
-      <div class="card-body">
+      <!--div class="card-body"> -->
           <h3 class="card-title text-center mb-4 mt-1">おかえりなさい</h3>
           <hr>
           <form>
@@ -36,6 +28,6 @@
             </div> <!-- form-group// -->
           </form>
       </div>
-    </div>
+    <!--/div> -->
   </div>
 <% end %>

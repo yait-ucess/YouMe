@@ -1,39 +1,42 @@
-<%= render 'articles/header' %>
-<%= form_with model: @profile, url: profiles_path, local: true do |form| %>
-  <%= render 'shared/error_messages', model: form.object %>
+<%= render 'shared/header' %>
+<%= render 'shared/menu' %>
+<div class="container">
+  <%= form_with model: @profile, url: profiles_path, local: true do |form| %>
+    <%= render 'shared/error_messages', model: form.object %>
 
-  <h4>あなたを教えてください</h4>
+    <h4>あなたを教えてください</h4>
 
-  <div class="img-upload">
-    <%= image_tag "camera.png", class: "rounded mx-auto d-block", alt: "camera.png", size: "100x100" %>
-    <%= form.file_field :image, id:"profile-image" %>
-  </div>
+    <div class="img-upload">
+      <%= image_tag "camera.png", class: "rounded mx-auto d-block", alt: "camera.png", size: "100x100" %>
+      <%= form.file_field :image, id:"profile-image" %>
+    </div>
 
-  <label for="basic-addon" class="form-label"></label>
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">お名前</span>
-    <%= form.text_field :name, class: "form-control", placeholder: "Your name" %>
-  </div>
+    <label for="basic-addon" class="form-label"></label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">お名前</span>
+      <%= form.text_field :name, class: "form-control", placeholder: "Your name" %>
+    </div>
 
-  <label for="basic-addon" class="form-label"></label>
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">お店の名前</span>
-    <%= form.text_field :store_name, class: "form-control", placeholder: "Store name" %>
-  </div>
+    <label for="basic-addon" class="form-label"></label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">お店の名前</span>
+      <%= form.text_field :store_name, class: "form-control", placeholder: "Store name" %>
+    </div>
 
-  <label for="basic-url" class="form-label"></label>
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon3">お店のURL</span>
-    <%= form.text_field :store_url, class: "form-control", placeholder: "https://example.com" %>
-  </div>
+    <label for="basic-url" class="form-label"></label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon3">お店のURL</span>
+      <%= form.text_field :store_url, class: "form-control", placeholder: "https://example.com" %>
+    </div>
 
-  <div class="form-floating">
-    <label for="floatingTextarea2"></label>
-    <%= form.text_area :text, class: "form-control", placeholder: "ご自由にお書きください", id: "floatingTextarea2", style: "height: 400px" %>
-  </div>
+    <div class="form-floating">
+      <label for="floatingTextarea2"></label>
+      <%= form.text_area :text, class: "form-control", placeholder: "皆様へのメッセージをお書きください", id: "floatingTextarea2", style: "height: 400px" %>
+    </div>
 
-  <div class="button">
-    <%= form.submit "登録する", class: "btn btn-outline-secondary" %>
-  </div>
+    <div class="button">
+      <%= form.submit "登録する", class: "btn btn-outline-secondary" %>
+    </div>
 
-<% end %> 
+  <% end %>
+</div>
