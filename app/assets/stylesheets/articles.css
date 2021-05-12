@@ -18,6 +18,13 @@
      object-fit: cover;
 }
 
+.article-new {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
+}
+
 .article-show {
   width: 60%;
   margin-right: auto;
@@ -55,5 +62,31 @@
   text-align: center;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.article-edit {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
+}
+
+.article-edit__title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.article-edit__text {
+  margin-bottom: 20%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.article-edit-img {
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=articles.css.map */

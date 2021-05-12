@@ -2,22 +2,24 @@
 <%= render 'shared/menu' %>
 <div class="container"> 
   <div class="menu__cover"></div>
-  <%= form_with model: @article, url: articles_path, local: true do |form| %>
-    <%= render 'shared/error_messages', model: form.object %>
-    <div class="img-upload">
-      <i class="far fa-images"></i>
-      <%#= image_tag "camera.png", class: "rounded mx-auto d-block", alt: "camera.png", size: "100x100" %>
-      <%= form.label :image_file, "画像を選ぶ", class: "profile-image" %>
-      <%= form.file_field :image, class:"image_form"%>
-    </div>
-    <div class="article__form__title">
-      <%= form.text_field :title, class: "", placeholder: "記事タイトル"%>
-    </div>
-    <div class="article__form__text">
-      <%= form.text_area :text, class: "", placeholder: "ご自由にお書きください。", style: "height: 500px"%>
-    </div>
-    <div class="button">
-      <%= form.submit "投稿", class: "btn btn-outline-secondary" %>
+  <div class="article-new">
+    <%= form_with model: @article, url: articles_path, local: true do |form| %>
+      <%= render 'shared/error_messages', model: form.object %>
+      <div class="img-upload">
+        <i class="far fa-images"></i>
+        <%#= image_tag "camera.png", class: "rounded mx-auto d-block", alt: "camera.png", size: "100x100" %>
+        <%= form.label :image_file, "画像を選ぶ", class: "profile-image" %>
+        <%= form.file_field :image, class:"image_form"%>
+      </div>
+      <div class="article__new__title">
+        <%= form.text_area :title, class: "", placeholder: "記事タイトル"%>
+      </div>
+      <div class="article__new__text">
+        <%= form.text_area :text, class: "", placeholder: "ご自由にお書きください。", style: "height: 500px"%>
+      </div>
+      <div class="button">
+        <%= form.submit "投稿", class: "btn btn-outline-secondary" %>
+      </div>
     </div>
   <% end %>
 </div>

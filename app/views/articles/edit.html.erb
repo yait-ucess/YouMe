@@ -1,22 +1,23 @@
 <%= render 'shared/header' %>
+<%= render 'shared/menu' %>
 <div class="container">
-  <h3 class="text-black-50 text-center">編集する</h3>
-  <%= form_with model: @article, local: true do |form| %>
-  <%= render 'shared/error_messages', model: form.object %>
-    <div class="img-upload">
-      <%= image_tag @article.image, class: "img-fluid" %>
-      <%= form.file_field :image, id:"profile-image" %>
-    </div>
-    <div class="form-floating">
-      <%= form.text_area :title, class: "form-control", placeholder: "記事タイトル", id: "floatingTextarea" %>
-      <label for="floatingTextarea"></label>
-    </div>
-    <div class="form-floating">
-      <%= form.text_area :text, class: "form-control", placeholder: "ご自由にお書きください。", id: "floatingTextarea2", style: "height: 600px"%>
-      <label for="floatingTextarea2"></label>
-    </div>
-    <div class="button">
-      <%= form.submit "完了", class: "btn btn-outline-secondary" %>
-    </div>
-  <% end %>
+  <div class="article-edit">
+    <!--h3 class="text-black-50 text-center">編集する</h3> -->
+    <%= form_with model: @article, local: true do |form| %>
+    <%= render 'shared/error_messages', model: form.object %>
+      <div class="article-edit__image">
+        <%= image_tag @article.image, class: "article-edit-img rounded" %>
+        <%= form.file_field :image %>
+      </div>
+      <div class="article-edit__title">
+        <%= form.text_area :title, class: "form-control", placeholder: "記事タイトル" %>
+      </div>
+      <div class="article-edit__text">
+        <%= form.text_area :text, class: "form-control", placeholder: "ご自由にお書きください。", style: "height: 600px"%>
+      </div>
+      <div class="button">
+        <%= form.submit "完了", class: "btn btn-outline-secondary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
