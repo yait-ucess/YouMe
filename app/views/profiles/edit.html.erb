@@ -3,33 +3,70 @@
 <div class="container">
   <%= form_with model: @profile, url: profile_path, local: true do |form| %>
     <%= render 'shared/error_messages', model: form.object %>
-    <div class="profile-edit__image">
-      <i class="far fa-images"></i>
-      <%= form.label :image_file, "画像を選ぶ", class: "profile-image" %>
-      <%= form.file_field :image, class:"profile-edit__img" %>
-    </div>
+    <div class="profile-edit">
+      <div class="profile-edit__image">
+        <i class="far fa-images"></i>
+        <%= form.label :image_file, "画像を選ぶ", class: "profile-image" do %>
+          <%= form.file_field :image, class:"profile-edit__img" %>
+        <% end %>
+      </div>
 
-    <div class="input-group mb-4">
-      <span class="input-group-text">お名前</span>
-      <%= form.text_field :name, class: "form-control", placeholder: "Your name" %>
-    </div>
+      <div class="input-group mb-4">
+        <span class="input-group-text">お名前</span>
+        <%= form.text_field :name, class: "profile-edit__input", placeholder: "Your name" %>
+      </div>
 
-    <div class="input-group mb-4">
-      <span class="input-group-text">お店の名前</span>
-      <%= form.text_field :store_name, class: "form-control", placeholder: "Store name" %>
-    </div>
+      <div class="input-group mb-4">
+        <span class="input-group-text">お店の名前</span>
+        <%= form.text_field :store_name, class: "profile-edit__input", placeholder: "Store name" %>
+      </div>
 
-    <div class="input-group mb-4">
-      <span class="input-group-text">お店のURL</span>
-      <%= form.text_field :store_url, class: "form-control", placeholder: "https://example.com" %>
-    </div>
+      <div class="input-group mb-4">
+        <span class="input-group-text">お店のURL</span>
+        <%= form.text_field :store_url, class: "profile-edit__input", placeholder: "https://example.com" %>
+      </div>
 
-    <div class="profile-edit__message mb-4">
-      <%= form.text_area :text, class: "form-control", placeholder: "ご自由にお書きください", id: "floatingTextarea2", style: "height: 400px" %>
-    </div>
+      <div class="profile-edit__message mb-4">
+        <%= form.text_area :text, class: "profile-edit__input", placeholder: "ご自由にお書きください", id: "floatingTextarea2", style: "height: 400px" %>
+      </div>
 
-    <div class="button">
-      <%= form.submit "完了", class: "btn btn-outline-secondary" %>
+      <div class="button">
+        <%= form.submit "完了", class: "btn btn-outline-secondary" %>
+      </div>
     </div>
   <% end %> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>

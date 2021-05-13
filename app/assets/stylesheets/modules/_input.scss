@@ -2,6 +2,7 @@ input {
   /* inputの枠線を消す */
   border: 1px solid transparent;
   transition: border 0.2s ease-out;
+  background-color: transparent;
 
   /* 任意の高さ */
   height: 50px;

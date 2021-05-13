@@ -5,7 +5,14 @@
     <table class="table table-borderless">
       <% @my_follow.each do |follow| %>
         <tr class="follow-list">
-          <td><%= follow.followed.name %></td>
+          <td>
+            <div class="follow-list__image">  
+              <%= image_tag follow.followed.image, class: "follow-list-img rounded" %>
+            </div>
+            <div class="follow-list__name">
+              <%= follow.followed.name %>
+            </div>
+          </td>
         </tr>
       <% end %>
     </table>

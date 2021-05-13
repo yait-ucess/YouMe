@@ -39,7 +39,35 @@
      object-fit: cover;
 }
 
+.profile-new {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
+}
+
+.profile-new__title {
+  color: gainsboro;
+  margin-bottom: 30px;
+}
+
+.profile-new__image {
+  margin-bottom: 40px;
+}
+
+.profile-show__message {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.profile-edit {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
+}
+
 .profile-edit__image {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 /*# sourceMappingURL=profiles.css.map */

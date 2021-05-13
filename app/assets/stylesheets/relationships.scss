@@ -28,3 +28,13 @@
 .table {
   table-layout: fixed;
 }
+
+.follow-list-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
