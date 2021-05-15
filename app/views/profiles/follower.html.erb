@@ -1,11 +1,28 @@
 <%= render 'shared/header' %>
 <div class="container">
-  フォロワー
+  <div class="follower-list__title">
+    フォロワー
+  </div>
   <div class="table-responsive">
     <table class="table table-borderless">
       <% @follower.each do |follower| %>
         <tr class="follower-list">
-          <td><%= follower.follower.nickname %></td>
+          <td class="follower-list__td">
+            <div class="follower-list__image">
+              <% if follower.follower.profile.present? %>
+                <%= image_tag follower.follower.profile.image, class: "follower-list-img rounded" %>
+              <% end %>
+            </div>
+            <div class="follower-list__name">
+              <% if follower.follower.profile.present? %>
+                <%= link_to profile_path(follower.follower.profile) do %>
+                  <%= follower.follower.profile.name %>
+                <% end %>
+              <% else %>
+                <%= follower.follower.nickname %>
+              <% end %>
+            </div>
+          </td>
         </tr>
       <% end %>
     </table>

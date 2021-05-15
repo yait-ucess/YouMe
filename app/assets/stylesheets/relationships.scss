@@ -29,10 +29,56 @@
   table-layout: fixed;
 }
 
+.follow-list {
+  &__title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bolder;
+  }
+
+  &__td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    border-radius: 50%;
+  }
+}
+
 .follow-list-img {
   height: 40px;
   width: 40px;
-  border-radius: 50%;
+  //border-radius: 50% !important;
+  overflow: hidden;
+  text-align: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.follower-list {
+  &__title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bolder;
+  }
+
+  &__td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    border-radius: 50%;
+  }
+}
+
+.follower-list-img {
+  height: 40px;
+  width: 40px;
+  //border-radius: 50% !important;
   overflow: hidden;
   text-align: center;
   -o-object-fit: cover;
