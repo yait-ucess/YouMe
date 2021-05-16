@@ -47,16 +47,18 @@
 }
 
 .follow-list__image {
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .follow-list-img {
-  height: 40px;
-  width: 40px;
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
   text-align: center;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .follower-list__title {
@@ -78,15 +80,17 @@
 }
 
 .follower-list__image {
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .follower-list-img {
-  height: 40px;
-  width: 40px;
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
   text-align: center;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=relationships.css.map */
