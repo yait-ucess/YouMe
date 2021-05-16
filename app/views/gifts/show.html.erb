@@ -21,7 +21,9 @@
               <td>￥<%= receive.price %></td>
               <td>
                 <% if receive.giver.profile.present? %>
-                  <%= receive.giver.profile.name %>さん
+                  <%= link_to profile_path(receive.giver.profile) do %>
+                    <%= receive.giver.profile.name %>
+                  <% end %>
                 <% else %>
                   <%= receive.giver.nickname %>さん
                 <% end %>
@@ -41,7 +43,15 @@
           <div class="give">
             <tr class="give-history">
               <td><%= l give.created_at %></td>
-              <td><%= give.receiver.name%>さん</td>
+              <td>
+                <% if give.receiver.present? %>
+                  <%= link_to profile_path(give.receiver) do %>
+                    <%= give.receiver.name %>
+                  <% end %>
+                <% else %>
+                  <%= give.receiver.name%>さん
+                <% end %>
+              </td>
               <td>
                 <%= link_to root_path do %>
                   <i class="fas fa-gift"></i><i class="fas fa-gifts"></i><i class="far fa-address-card"></i>
