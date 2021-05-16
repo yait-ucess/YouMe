@@ -1,25 +1,27 @@
 <%= render 'shared/header' %>
 <%= render 'shared/menu' %>
 <div class="container">
-  <div class="follow-list__title">
-    フォロー
-  </div>
-  <div class="table-responsive">
-    <table class="table table-borderless">
-      <% @my_follow.each do |follow| %>
-        <tr class="follow-list">
-          <td class="follow-list__td">
-            <div class="follow-list__image">  
-              <%= image_tag follow.followed.image, class: "follow-list-img rounded" %>
-            </div>
-            <div class="follow-list__name">
-              <%= link_to profile_path(follow.followed) do %>
-                <%= follow.followed.name %>
-              <% end %>
-            </div>
-          </td>
-        </tr>
-      <% end %>
-    </table>
+  <div class="follow-list">
+    <div class="follow-list__title">
+      フォロー
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <% @my_follow.each do |follow| %>
+          <tr class="follow-list">
+            <td class="follow-list__td">
+              <div class="follow-list__image">  
+                <%= image_tag follow.followed.image, class: "follow-list-img rounded" %>
+              </div>
+              <div class="follow-list__name">
+                <%= link_to profile_path(follow.followed) do %>
+                  <%= follow.followed.name %>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>

@@ -30,6 +30,11 @@
 }
 
 .follow-list {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
+
   &__title {
     text-align: center;
     margin-bottom: 30px;
@@ -38,7 +43,6 @@
 
   &__td {
     display: flex;
-    justify-content: center;
     align-items: center;
   }
 
@@ -47,6 +51,10 @@
     width: 50px;
     border-radius: 50%;
     overflow: hidden;
+  }
+
+  &__name {
+    margin-left: 3%;
   }
 }
 
@@ -58,6 +66,11 @@
 }
 
 .follower-list {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
+
   &__title {
     text-align: center;
     margin-bottom: 30px;
@@ -66,7 +79,6 @@
 
   &__td {
     display: flex;
-    justify-content: center;
     align-items: center;
   }
 
@@ -75,6 +87,10 @@
     width: 50px;
     border-radius: 50%;
     overflow: hidden;
+  }
+
+  &__name {
+    margin-left: 3%;
   }
 }
 

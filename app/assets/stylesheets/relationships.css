@@ -28,6 +28,13 @@
   table-layout: fixed;
 }
 
+.follow-list {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
+}
+
 .follow-list__title {
   text-align: center;
   margin-bottom: 30px;
@@ -38,9 +45,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -53,12 +57,23 @@
   overflow: hidden;
 }
 
+.follow-list__name {
+  margin-left: 3%;
+}
+
 .follow-list-img {
   height: 100%;
   width: 100%;
   text-align: center;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.follower-list {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
 }
 
 .follower-list__title {
@@ -71,9 +86,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -84,6 +96,10 @@
   width: 50px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.follower-list__name {
+  margin-left: 3%;
 }
 
 .follower-list-img {
