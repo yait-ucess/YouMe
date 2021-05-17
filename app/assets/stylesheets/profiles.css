@@ -28,10 +28,6 @@
   text-align: center;
 }
 
-.profile-follow-list {
-  text-align: center;
-}
-
 .profile-article-img {
   margin-top: 20px;
   height: 280px;
@@ -53,6 +49,23 @@
 
 .profile-new__image {
   margin-bottom: 40px;
+}
+
+.profile-show__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: solid 1px whitesmoke;
+  border-bottom: solid 2px whitesmoke;
+}
+
+.profile-show__lists {
+  margin-left: 5%;
+  font-size: 14px;
 }
 
 .profile-show__message {

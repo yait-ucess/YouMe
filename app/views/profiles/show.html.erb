@@ -1,38 +1,7 @@
 <%= render 'shared/header' %>
 <%= render 'shared/menu' %>
 <div class="container">
-  <% if @profile.user == current_user %>
-    <i class="fas fa-pencil-alt"></i>
-    <%= link_to "編集", edit_profile_path(@profile.id), class: "text-dark" %>
-  <% end %>
-  <div class="profile-show-img">
-    <%= image_tag @profile.image, class: "profile-img"%>
-  </div>
-  <div class="text-center">
-    <strong><%= @profile.name %></strong>
-  </div>
-  <div class="profile-follow-list">
-    <%= link_to "フォロー", followed_profile_path, class: "text-secondary" %>
-    <%= link_to "フォロワー", follower_profile_path, class: "text-secondary" %>
-  </div>
-  <%= render 'relationships/relationship' %>
-  <% if user_signed_in? && current_user != @profile.user%>  
-    <%= link_to new_profile_gifts_path(@profile) do %>
-      <div class="btn btn-outline-success">
-        <i class="fas fa-gift"></i>
-        ギフトを贈る
-      </div>
-    <% end %>
-  <% end %>
-  <div class="profile-show__store-name">
-    <%= @profile.store_name %>
-  </div>
-  <div class="profile-show__store-url">
-    <%= @profile.store_url %>
-  </div>
-  <div class="profile-show__message">
-    <%= @profile.text %>
-  </div>
+  <%= render 'shared/profile_show' %>
   <div class="row">
     <% @profile.articles.order("created_at DESC").each do |articles| %>
       <div class="article-profile col-sm-6">

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :gifts, only: [:new, :create, :show]
     resource :relationships, only: [:create, :destroy]
     member do
-      get :follower, :followed
+      get :follower, :followed, :message
     end
   end
 

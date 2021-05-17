@@ -1,0 +1,34 @@
+<% if @profile.user == current_user %>
+  <i class="fas fa-pencil-alt"></i>
+  <%= link_to "編集", edit_profile_path(@profile.id), class: "text-dark" %>
+<% end %>
+<div class="profile-show-img">
+  <%= image_tag @profile.image, class: "profile-img"%>
+</div>
+<div class="text-center">
+  <strong><%= @profile.name %></strong>
+</div>
+<%= render 'relationships/relationship' %>
+<% if user_signed_in? && current_user != @profile.user%>  
+  <%= link_to new_profile_gifts_path(@profile) do %>
+    <div class="btn btn-outline-success">
+      <i class="fas fa-gift"></i>
+      ギフトを贈る
+    </div>
+  <% end %>
+<% end %>
+<div class="profile-follows">
+  <%= link_to "フォロー", followed_profile_path, class: "text-secondary" %>
+  <%= link_to "フォロワー", follower_profile_path, class: "text-secondary" %>
+</div>
+<ul class="profile-show__list">
+  <li class="profile-show__lists">
+    <%= link_to "ホーム", profile_path %>
+  </li>
+  <li class="profile-show__lists">
+    <%= link_to "お店", @profile.store_url %>
+  </li>
+  <li class="profile-show__lists">
+    メッセージ
+  </li>
+</ul>

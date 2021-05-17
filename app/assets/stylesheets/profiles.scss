@@ -40,10 +40,6 @@
 //   text-align: center;
 // }
 
-.profile-follow-list {
-  text-align: center;
-}
-
 .profile-article-img {
   margin-top: 20px;
   height: 280px;
@@ -84,9 +80,28 @@
 }
 
 //show
-.profile-show__message {
-  white-space: pre-wrap;
-  word-wrap: break-word;
+.profile-show {
+  &__list {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    border-top: solid 1px whitesmoke;
+    border-bottom: solid 2px whitesmoke;
+  }
+
+  &__lists {
+    margin-left: 5%;
+    font-size: 14px;
+  }
+
+  &__message {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+.profile-follows {
+  
 }
 
 //edit
