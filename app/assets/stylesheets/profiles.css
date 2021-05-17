@@ -75,6 +75,7 @@
 .profile-show__store-name {
   text-align: center;
   font-style: italic;
+  margin-bottom: 5%;
 }
 
 .profile-show__list {

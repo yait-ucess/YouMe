@@ -21,8 +21,13 @@
               <td>￥<%= receive.price %></td>
               <td>
                 <% if receive.giver.profile.present? %>
-                  <%= link_to profile_path(receive.giver.profile), class: "gift-show__user" do %>
-                    <%= receive.giver.profile.name %>
+                  <%= link_to profile_path(receive.giver.profile), class: "gift-receive__user" do %>
+                    <div class="gift-receive__image">
+                      <%= image_tag receive.giver.profile.image, class: "gift-receive-img rounded" %>
+                    </div>
+                    <div class="gift-receive__name">
+                      <%= receive.giver.profile.name %>
+                    </div>
                   <% end %>
                 <% else %>
                   <%= receive.giver.nickname %>さん
@@ -37,7 +42,7 @@
     <div class="table-responsive">
       <table class="table">
         <div class="table-light">
-          <tr><th>日付</th><th>ユーザー</th><th>クーポン</th></tr>
+          <tr><th>日付</th><th>ユーザー</th><th>リターン</th></tr>
         </div>
         <% @gift_give.each do |give| %>
           <div class="give">
@@ -45,8 +50,13 @@
               <td><%= l give.created_at %></td>
               <td>
                 <% if give.receiver.present? %>
-                  <%= link_to profile_path(give.receiver), class: "gift-show__user" do %>
-                    <%= give.receiver.name %>
+                  <%= link_to profile_path(give.receiver), class: "gift-give__user" do %>
+                    <div class="gift-give__image">
+                      <%= image_tag give.receiver.image, class: "gift-give-img rounded" %>
+                    </div>
+                    <div class="gift-give__name">
+                      <%= give.receiver.name %>
+                    </div>
                   <% end %>
                 <% else %>
                   <%= give.receiver.name%>さん

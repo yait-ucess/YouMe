@@ -9,15 +9,15 @@
       <table class="table">
         <% @my_follow.each do |follow| %>
           <tr class="follow-list">
-            <td class="follow-list__td">
-              <div class="follow-list__image">  
-                <%= image_tag follow.followed.image, class: "follow-list-img rounded" %>
-              </div>
-              <div class="follow-list__name">
-                <%= link_to profile_path(follow.followed) do %>
+            <td>
+              <%= link_to profile_path(follow.followed), class: "follow-list__td" do %>
+                <div class="follow-list__image">  
+                  <%= image_tag follow.followed.image, class: "follow-list-img rounded" %>
+                </div>
+                <div class="follow-list__name">
                   <%= follow.followed.name %>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
             </td>
           </tr>
         <% end %>

@@ -28,10 +28,58 @@
   table-layout: fixed;
 }
 
-// .gift-show {
-//   &__user {
-//     &:hover {
-//       color: gainsboro;
-//     }
-//   }
-// }
+tr {
+  align-items: center !important;
+}
+
+.gift-receive {
+  &__image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    margin-left: 3%;
+  }
+}
+
+.gift-receive-img {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.gift-give {
+  &__image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    margin-left: 3%;
+  }
+}
+
+.gift-give-img {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+}

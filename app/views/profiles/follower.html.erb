@@ -6,13 +6,15 @@
       フォロワー
     </div>
     <div class="table-responsive">
-      <table class="table table-borderless">
+      <table class="table">
         <% @follower.each do |follower| %>
           <tr class="follower-list">
             <td class="follower-list__td">
               <div class="follower-list__image">
                 <% if follower.follower.profile.present? %>
-                  <%= image_tag follower.follower.profile.image, class: "follower-list-img rounded" %>
+                  <%= link_to profile_path(follower.follower.profile) do %>
+                    <%= image_tag follower.follower.profile.image, class: "follower-list-img rounded" %>
+                  <% end %>
                 <% end %>
               </div>
               <div class="follower-list__name">
