@@ -81,6 +81,24 @@
 
 //show
 .profile-show {
+  margin-bottom: 20%;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__name {
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  &__store-name {
+    text-align: center;
+    font-style: italic;
+  }
+
   &__list {
     display: flex;
     height: 60px;
@@ -92,9 +110,23 @@
   &__lists {
     margin-left: 5%;
     font-size: 14px;
+
+    &:hover {
+      color: gainsboro;
+    }
+  }
+
+  &__no-article {
+    width: 100%;
+    text-align: center;
+    color: gainsboro;
   }
 
   &__message {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20%;
     white-space: pre-wrap;
     word-wrap: break-word;
   }

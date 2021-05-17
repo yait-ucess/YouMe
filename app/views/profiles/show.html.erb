@@ -1,13 +1,21 @@
 <%= render 'shared/header' %>
 <%= render 'shared/menu' %>
 <div class="container">
-  <%= render 'shared/profile_show' %>
-  <div class="row">
-    <% @profile.articles.order("created_at DESC").each do |articles| %>
-      <div class="article-profile col-sm-6">
-        <%= image_tag articles.image, class: "profile-article-img rounded" %>
-        <%= link_to articles.title, article_path(articles.id), class: "text-dark" %>
-      </div>
-    <% end %>
+  <div class="profile-show">
+    <%= render 'shared/profile_show' %>
+    <div class="row">
+      <% if @profile.articles.present? %>
+        <% @profile.articles.order("created_at DESC").each do |articles| %>
+          <div class="article-profile col-sm-6">
+            <%= image_tag articles.image, class: "profile-article-img rounded" %>
+            <%= link_to articles.title, article_path(articles.id), class: "text-dark" %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="profile-show__no-article">
+          まだ記事がありません
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

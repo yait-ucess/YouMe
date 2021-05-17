@@ -51,6 +51,32 @@
   margin-bottom: 40px;
 }
 
+.profile-show {
+  margin-bottom: 20%;
+}
+
+.profile-show__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profile-show__name {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.profile-show__store-name {
+  text-align: center;
+  font-style: italic;
+}
+
 .profile-show__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,7 +94,21 @@
   font-size: 14px;
 }
 
+.profile-show__lists:hover {
+  color: gainsboro;
+}
+
+.profile-show__no-article {
+  width: 100%;
+  text-align: center;
+  color: gainsboro;
+}
+
 .profile-show__message {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20%;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
