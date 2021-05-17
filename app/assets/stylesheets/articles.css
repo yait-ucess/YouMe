@@ -2,12 +2,48 @@
   margin-bottom: 35px;
 }
 
-.article__img {
+.article-index__inner {
+  margin-bottom: 3%;
+}
+
+.article-index__image {
   height: 220px;
   overflow: hidden;
 }
 
-.article__form__title {
+.article-index__title {
+  margin-bottom: 3%;
+}
+
+.article-index__title:hover {
+  color: gainsboro;
+}
+
+.article-index__profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.article-index__profile__image {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.article-index__profile__name {
+  margin-left: 1%;
+}
+
+.article-index__profile__name:hover {
+  color: gainsboro;
+}
+
+.article-index__form__title {
   padding-bottom: 100px;
 }
 
@@ -16,6 +52,14 @@
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.article-index-profile-img {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .article-new {

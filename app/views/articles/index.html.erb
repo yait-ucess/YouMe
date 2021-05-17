@@ -4,16 +4,23 @@
   <div class="article row">
     <div class="menu__cover"></div> 
     <% @search_articles.each do |article| %>
-      <div class="article__inner col-md-6 col-lg-4 ">
-        <div class="article__img">
-          <%= image_tag article.image, class: "article-index-img rounded" %>
-        </div>
-        <div class="article__title">
-          <p><%= link_to article.title, article_path(article.id), class: "text-dark" %></p>
-        </div>
-        <div class="article__writer">
-          <p><%= link_to article.profile.name, profile_path(article.profile_id), class: "text-dark" %></p>
-        </div>
+      <div class="article-index__inner col-md-6 col-lg-4 ">
+        <%= link_to article_path(article.id) do %>
+          <div class="article-index__image">
+            <%= image_tag article.image, class: "article-index-img rounded" %>
+          </div>
+          <div class="article-index__title">
+            <%= article.title %>
+          </div>
+        <% end %>
+        <%= link_to profile_path(article.profile_id), class: "article-index__profile" do %>
+          <div class="article-index__profile__image">
+            <%= image_tag article.profile.image, class: "article-index-profile-img" %>
+          </div>
+          <div class="article-index__profile__name">
+            <%= article.profile.name %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
