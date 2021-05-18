@@ -22,9 +22,32 @@
     <% end %>
   <% end %>
 </div>
+
+<%# <% <div class="container">
+  <button type="button" class="button" data-modal-open="modal-1">
+    OPEN
+  </button>
+  
+  <div class="modal" id="modal-1">
+    <div class="modal-overlay" data-modal-close>
+      <div class="modal-container">
+        <h2 class="modal-title">モーダルウィンドウ</h2>
+        <div class="modal-content">
+          <p>モーダルウィンドウ（英: modal window）は、コンピュータアプリケーションソフトウェアのユーザインタフェース設計において、何らかのウィンドウの子ウィンドウとして生成されるサブ要素のうち、ユーザーがそれに対して適切に応答しない限り、制御を親ウィンドウに戻さないもの。</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="button" data-modal-close="modal-1">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> %>
             <%# <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-              Launch demo modal
+              <i class="fas fa-gift"></i>
+              ギフトを贈る
             </button>
 
             <!-- Modal -->
@@ -32,13 +55,16 @@
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <div class="modal-title" id="exampleModalCenterTitle">
+                      <h3 class="card-title text-center mb-4 mt-1"><%= simple_format("#{@profile.name}さん<br>に100円分のギフトを贈ります") ></h3>
+                    </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    ...
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-hand-holding"></i>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -47,6 +73,7 @@
                 </div>
               </div>
             </div> %>
+
 <div class="profile-follows">
   <%= @profile.user.followeds.count %>
   <%= link_to "フォロー", followed_profile_path, class: "text-secondary" %>

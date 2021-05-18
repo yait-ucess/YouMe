@@ -130,6 +130,12 @@
   object-fit: cover;
 }
 
+.article-show-profile-name {
+  &:hover {
+    color: gainsboro;
+  }
+}
+
 //edit
 .article-edit {
   width: 60%;

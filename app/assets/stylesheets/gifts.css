@@ -92,4 +92,9 @@ tr {
   -o-object-fit: cover;
   object-fit: cover;
 }
+
+.profile-show__gift-btn {
+  border-color: #71c9ce;
+  color: #71c9ce;
+}
 /*# sourceMappingURL=gifts.css.map */

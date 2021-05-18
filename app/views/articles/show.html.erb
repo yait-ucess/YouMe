@@ -15,10 +15,14 @@
       <%= @article.title %>
     </div>
     <%= render 'likes/like' %>
-    <div class="">
-      <%= image_tag @article.profile.image, class: "article-show-profile-img" %>
-    </div>
-    <%= link_to @article.profile.name, profile_path(@article_profile.id), class: "text-dark" %>
+    <%= link_to profile_path(@article.profile) do %>
+      <div class="">
+        <%= image_tag @article.profile.image, class: "article-show-profile-img" %>
+      </div>
+      <div class="article-show-profile-name">
+        <%= @article.profile.name %>
+      </div>
+    <% end %>
     <div class="article-show__text">
       <%= @article.text %>
     </div>
