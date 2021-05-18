@@ -13,14 +13,22 @@
             <%= article.title %>
           </div>
         <% end %>
-        <%= link_to profile_path(article.profile_id), class: "article-index__profile" do %>
-          <div class="article-index__profile__image">
-            <%= image_tag article.profile.image, class: "article-index-profile-img" %>
+        <div class="article-index__under-row">
+          <div class="article-index__profile">
+            <%= link_to profile_path(article.profile_id), class: "article-index__profile-link" do %>
+              <div class="article-index__profile__image">
+                <%= image_tag article.profile.image, class: "article-index-profile-img" %>
+              </div>
+              <div class="article-index__profile__name">
+                <%= article.profile.name %>
+              </div>
+            <% end %>
           </div>
-          <div class="article-index__profile__name">
-            <%= article.profile.name %>
+          <div class="article-index__like">
+            <i class="far fa-heart"></i>
+            <%= article.likes.count%>
           </div>
-        <% end %>
+        </div>
       </div>
     <% end %>
   </div>
