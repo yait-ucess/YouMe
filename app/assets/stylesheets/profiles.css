@@ -114,6 +114,11 @@
   word-wrap: break-word;
 }
 
+.profile-follows {
+  width: 100%;
+  margin-top: 3%;
+}
+
 .profile-edit {
   width: 50%;
   margin-right: auto;

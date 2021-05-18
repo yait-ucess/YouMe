@@ -27,7 +27,6 @@ class ProfilesController < ApplicationController
 
   def follower
     @follower  = @profile.relationships
-    #binding.pry
   end
 
   def edit

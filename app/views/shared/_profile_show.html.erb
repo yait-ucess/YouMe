@@ -11,12 +11,8 @@
 <div class="profile-show__store-name">
   ~ <%= @profile.store_name %> ~
 </div>
-<%= render 'relationships/relationship' %>
 <div class="profile-show__row">
-  <div class="profile-follows">
-    <%= link_to "フォロー", followed_profile_path, class: "text-secondary" %>
-    <%= link_to "フォロワー", follower_profile_path, class: "text-secondary" %>
-  </div>
+  <%= render 'relationships/relationship' %>
   <% if user_signed_in? && current_user != @profile.user%>  
     <%= link_to new_profile_gifts_path(@profile) do %>
       <div class="profile-show__gift btn btn-outline-success">
@@ -25,6 +21,12 @@
       </div>
     <% end %>
   <% end %>
+</div>
+<div class="profile-follows">
+  <%= @profile.user.followeds.count %>
+  <%= link_to "フォロー", followed_profile_path, class: "text-secondary" %>
+  <%= @profile.followers.count %>
+  <%= link_to "フォロワー", follower_profile_path, class: "text-secondary" %>
 </div>
 <ul class="profile-show__list">
   <li class="profile-show__lists">
